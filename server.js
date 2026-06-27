@@ -146,7 +146,7 @@ app.post('/api/invoices', async (req, res) => {
     if (!amount || isNaN(amount) || amount <= 0) return res.status(400).json({ error: 'Valid amount required.' });
 
     const invoiceId = 'INV-' + Math.floor(100000 + Math.random() * 900000);
-    const minutes = expiryMinutes || 15;
+    const minutes = expiryMinutes || 5;
 
     const invoice = {
       id: invoiceId,
